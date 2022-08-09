@@ -1,0 +1,24 @@
+
+<div *ngIf="heroesCaidos.length > 0; else noBorrado">
+    <span>Heroes Caídos:</span>
+    <ul>
+        <li *ngFor="let heroe of heroesCaidos">
+                {{heroe}}
+                <!-- <button (click)="revivirHeroe(heroe)"> Revivir heroe</button> -->
+        </li>
+    </ul>
+<!-- <button (click)="borrarHeroe()"> matar heroe</button> -->
+</div>
+<ng-template #noBorrado>
+    <span>No se ha borrado nada!</span>
+</ng-template>
+
+<div *ngIf="heroes.length > 0">
+    <p>listados Heroes</p>
+    <ul>
+        <li *ngFor="let heroe of heroes; let i = index">
+            {{i}} - {{heroe}} 
+            <button (click)="matarHeroe(heroe)"> matar heroe</button>
+        </li>
+</ul>
+</div>
